@@ -1,0 +1,41 @@
+# Секреты и ключи
+.env
+backend/.env
+google_credentials.json
+backend/google_credentials.json
+authorized_key.json
+backend/authorized_key.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Images (placeholders - add real images)
+frontend/images/*.jpg
+frontend/images/*.png
+!frontend/images/.gitkeep

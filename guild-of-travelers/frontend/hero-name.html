@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зал Распределения - Гильдия Путников</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Background -->
+    <div id="background" class="background-overlay"></div>
+    
+    <!-- Particle Canvas -->
+    <div id="particleContainer"></div>
+    
+    <!-- Crystal Ball Effect -->
+    <div class="crystal-ball"></div>
+    
+    <!-- Main Container -->
+    <div class="container animate-in">
+        <header>
+            <img src="images/guild-emblem.png" alt="Эмблема Гильдии" class="guild-emblem" onerror="this.style.display='none'">
+            <h1 class="magical-text">Зал Распределения Гильдий</h1>
+        </header>
+        
+        <main>
+            <div class="result-card">
+                <p id="welcomeText" style="font-size: 1.2em; text-align: center; margin-bottom: 30px; color: var(--brown-dark);"></p>
+                
+                <ul class="guild-list">
+                    <li class="guild-item">
+                        <div class="guild-icon">🌿</div>
+                        <div class="guild-info">
+                            <h3>Природа</h3>
+                            <p>Для тех, кто слышит шёпот деревьев</p>
+                        </div>
+                    </li>
+                    <li class="guild-item">
+                        <div class="guild-icon">⚙️</div>
+                        <div class="guild-info">
+                            <h3>Техника</h3>
+                            <p>Для создателей и изобретателей</p>
+                        </div>
+                    </li>
+                    <li class="guild-item">
+                        <div class="guild-icon">🎨</div>
+                        <div class="guild-info">
+                            <h3>Искусство</h3>
+                            <p>Для творцов и вдохновителей</p>
+                        </div>
+                    </li>
+                    <li class="guild-item">
+                        <div class="guild-icon">🤝</div>
+                        <div class="guild-info">
+                            <h3>Люди</h3>
+                            <p>Для целителей и наставников</p>
+                        </div>
+                    </li>
+                    <li class="guild-item">
+                        <div class="guild-icon">📚</div>
+                        <div class="guild-info">
+                            <h3>Знания</h3>
+                            <p>Для мудрецов и исследователей</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="oracle-quote">
+                    "Пять путей лежат перед тобой, но лишь один истинно твой. 
+                    Пройди испытания Оракула, и он укажет верное направление."
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="oracle.html" class="btn glow-effect">
+                        🔮 Принять вызов Оракула
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/effects.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if user is logged in
+            const heroName = localStorage.getItem('questHeroName');
+            if (!heroName) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Set welcome text
+            document.getElementById('welcomeText').innerHTML = 
+                `Добро пожаловать, <strong>${heroName}</strong>! Пять путей лежат перед тобой.`;
+            
+            // Initialize particle system - magic type for oracle atmosphere
+            new AdvancedParticleSystem('particleContainer', {
+                count: 70,
+                type: 'magic',
+                color: 'rgba(100, 150, 255, 0.6)',
+                speed: 1,
+                size: 4
+            });
+            
+            // Add sparkle particles
+            setTimeout(() => {
+                new AdvancedParticleSystem('particleContainer', {
+                    count: 40,
+                    type: 'sparkle',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    speed: 0.6,
+                    size: 2
+                });
+            }, 100);
+            
+            // Set background
+            const background = document.getElementById('background');
+            background.style.backgroundImage = "url('images/oracle-room.jpg')";
+        });
+    </script>
+</body>
+</html>
