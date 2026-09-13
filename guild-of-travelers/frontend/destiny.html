@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Твоя Судьба - Гильдия Путников</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Background -->
+    <div id="background" class="background-overlay"></div>
+    
+    <!-- Particle Canvas -->
+    <div id="particleContainer"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <header>
+            <h2 class="magical-text">📜 Твоя Судьба</h2>
+        </header>
+        
+        <main>
+            <div class="result-card animate-in" style="max-width: 800px;">
+                <h1 id="greetingText" style="color: var(--gold-dark); margin-bottom: 20px; font-size: 2em;"></h1>
+                
+                <div id="profileBlock" class="result-section" style="text-align: center; padding: 30px; background: rgba(212, 175, 55, 0.1); border: 2px solid var(--gold-dark);">
+                    <h3 style="color: var(--brown-dark); font-size: 1.5em;">Твой профиль:</h3>
+                    <p id="typeName" style="font-size: 1.8em; color: var(--gold-primary); font-weight: bold; margin: 15px 0;"></p>
+                </div>
+                
+                <div class="score-chart" id="scoreChart">
+                    <!-- Score bars will be added here -->
+                </div>
+                
+                <div id="recommendations" style="margin-top: 30px;">
+                    <div class="result-section">
+                        <h3>🎯 Подходящие профессии</h3>
+                        <ul id="professionsList"></ul>
+                    </div>
+                    
+                    <div class="result-section">
+                        <h3>📚 Рекомендуемые предметы ОГЭ/ЕГЭ</h3>
+                        <ul id="subjectsList"></ul>
+                    </div>
+                    
+                    <div class="result-section">
+                        <h3>🏛️ ВУЗы России</h3>
+                        <ul id="universitiesList"></ul>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button id="saveBtn" class="btn glow-effect btn-full">
+                        💾 Сохранить результаты в Гильдии
+                    </button>
+                    <div id="successMessage" class="success-message">
+                        ✅ Результаты успешно сохранены в архивах Гильдии!
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="index.html" class="btn" style="background: linear-gradient(135deg, #8b4513, #2c1810); color: white;">
+                        🏠 Вернуться в таверну
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/effects.js"></script>
+    <script src="js/destiny.js"></script>
+</body>
+</html>
